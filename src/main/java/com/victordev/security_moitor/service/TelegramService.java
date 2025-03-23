@@ -13,7 +13,7 @@ public class TelegramService {
 
     private static final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     private static final String TELEGRAM_BOT_TOKEN = "8123136481:AAHdSzUrwQ12KutvaQmoHYlTSA7B6tUMwU0";
-    private static final String TELEGRAM_CHAT_ID = "-4784421338";
+    private static final String TELEGRAM_CHAT_ID = "-4614717645";
     private static final String TELEGRAM_API_URL = "https://api.telegram.org/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage";
 
     public void sendAlertToBot(AlertResponseDTO dto) {
