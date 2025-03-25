@@ -8,7 +8,7 @@ RUN mvn clean install -DskipTests
 
 FROM openjdk:17-jdk-alpine
 
-COPY --from=build /app/target/learning-docker-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY --from=build /app/target/security-moitor-0.0.1-SNAPSHOT.jar /app/app.jar
 
 WORKDIR /app
 
