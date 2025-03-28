@@ -11,10 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/sensor")
-@RequiredArgsConstructor
 public class SensorController {
 
     private final SensorService sensorService;
+
+    public SensorController(SensorService sensorService) {
+        this.sensorService = sensorService;
+    }
 
     @PostMapping
     public ResponseEntity<SensorResponseDTO> save(@RequestBody SensorRequestDTO dto) {

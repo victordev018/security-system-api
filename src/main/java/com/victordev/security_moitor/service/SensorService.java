@@ -7,17 +7,20 @@ import com.victordev.security_moitor.model.dto.sensor.SensorRequestDTO;
 import com.victordev.security_moitor.model.dto.sensor.SensorResponseDTO;
 import com.victordev.security_moitor.repository.SensorRepository;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class SensorService {
 
     private final SensorRepository sensorRepository;
     private final SensorMapper sensorMapper;
+
+    public SensorService(SensorRepository sensorRepository, SensorMapper sensorMapper) {
+        this.sensorRepository = sensorRepository;
+        this.sensorMapper = sensorMapper;
+    }
 
     @Transactional
     public SensorResponseDTO save(SensorRequestDTO dto) {

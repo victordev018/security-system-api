@@ -2,9 +2,7 @@ package com.victordev.security_moitor.model;
 
 import com.victordev.security_moitor.model.enums.SensorStatus;
 import jakarta.persistence.*;
-import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "sensor")
 public class Sensor {
@@ -29,5 +27,37 @@ public class Sensor {
 
     public Sensor() {
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public SensorStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(SensorStatus status) {
+        this.status = status;
     }
 }

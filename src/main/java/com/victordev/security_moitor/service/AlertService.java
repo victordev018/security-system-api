@@ -8,18 +8,22 @@ import com.victordev.security_moitor.repository.AlertRepository;
 import com.victordev.security_moitor.repository.SensorRepository;
 import com.victordev.security_moitor.service.exception.NotFoundError;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class AlertService {
 
     private final AlertRepository alertRepository;
     private final SensorRepository sensorRepository;
     private final AlertMapper alertMapper;
+
+    public AlertService(AlertRepository alertRepository, SensorRepository sensorRepository, AlertMapper alertMapper) {
+        this.alertRepository = alertRepository;
+        this.sensorRepository = sensorRepository;
+        this.alertMapper = alertMapper;
+    }
 
     @Transactional
     public AlertResponseDTO save(AlertRequestDTO dto) {
